@@ -3,6 +3,12 @@ name = "rust-programming-codes"
 version = "0.1.0"
 authors = ["Tony Deng <wolf.deng@gmail.com>"]
 edition = "2018"
+definitions = "《Rust编程之道》学习笔记及代码"
+homepage = "https://github.com/tonydeng/rust-programming-codes"
+license = "MIT"
+keywords = ["book","rust"]
+categories = ["rust-programming-book-codes"]
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
