@@ -1,0 +1,12 @@
+[package]
+name = "use_regex"
+version = "0.1.0"
+authors = ["Tony Deng <wolf.deng@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# regex包支持大部分正则匹配功能，但不支持环视(look-around)和反引用(backreference)。
+# 如果一定要使用环视和反向引用，可以使用fancy-regex包
+regex =  "1.0.5"
