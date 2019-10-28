@@ -1,5 +1,7 @@
 # 包装箱和模块
 
+> https://kaisery.gitbooks.io/rust-book-chinese/content/content/Crates%20and%20Modules%20crate%20和模块.html
+
 当一个项目变大以后，良好的软件工程实践是把它分为一堆较小的部分，再把它们装配到一起。定义良好的接口也非常重要，以使有些功能是私有的，而有些是公有的。Rust 有一个模块系统来帮助我们处理这些工作。
 
 ## 基础术语：包装箱和模块
