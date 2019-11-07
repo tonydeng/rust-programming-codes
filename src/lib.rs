@@ -5,5 +5,6 @@
 // )]
 
 pub mod ch01;
+pub mod ch02;
 pub mod ch10;
 pub mod ch11;
