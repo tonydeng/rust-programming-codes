@@ -15,4 +15,5 @@ pub fn title(){
     println!("第2章：{}", "语言精要");
 }
 
-pub mod binding;    // 变量与绑定
+pub mod binding;
+pub mod function;
