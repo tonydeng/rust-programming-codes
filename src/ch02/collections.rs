@@ -81,3 +81,110 @@ pub fn vec_deque(){
     assert_eq!(buf.get(3), Some(&4));
     assert_eq!(buf.get(4), Some(&5));
 }
+
+/// # 线性序列：链表（LinkedList）
+///
+/// Basic usage:
+///
+/// ```
+/// use std::collections::LinkedList;
+/// fn linked_list() {
+///     let mut list1 = LinkedList::new();
+///
+///     list1.push_back('a');
+///
+///     let mut list2 = LinkedList::new();
+///     list2.push_back('b');
+///     list2.push_back('c');
+///
+///     list1.append(&mut list2);
+///     println!("{:?}", list1); // ['a', 'b', 'c']
+///     println!("{:?}", list2); // []
+///
+///     list1.pop_front();
+///     println!("{:?}", list1); // ['b', 'c']
+///
+///     list1.push_front('e');
+///     println!("{:?}", list1); // ['e', 'b', 'c']
+///
+///     list2.push_front('f');
+///     println!("{:?}", list2); // ['f']
+/// }
+/// linked_list();
+pub fn linkd_list() {
+    use std::collections::LinkedList;
+    let mut list1 = LinkedList::new();
+
+    list1.push_front('a');
+
+    let mut list2 = LinkedList::new();
+    list2.push_back('b');
+    list2.push_back('c');
+
+    list1.append(&mut list2);
+    println!("{:?}", list1);    // ['a', 'b', 'c']
+    println!("{:?}", list2);    // []
+
+    list1.pop_front();
+    println!("{:?}", list1); // ['b', 'c']
+
+    list1.push_front('e');
+    println!("{:?}", list1); // ['e','b','c']
+
+    list2.push_front('f');
+    println!("{:?}", list2); // ['f']
+}
+
+/// # Key-Value映射表: HashMap和BTreeMap
+///
+/// Basic usage:
+///
+/// ```
+/// use std::collections::BTreeMap;
+/// use std::collections::HashMap;
+/// fn map_demo() {
+///     let mut hmap = HashMap::new();
+///     let mut bmap = BTreeMap::new();
+///
+///     hmap.insert(3, "c");
+///     hmap.insert(1, "a");
+///     hmap.insert(2, "b");
+///     hmap.insert(5, "e");
+///     hmap.insert(4, "d");
+///
+///     bmap.insert(3, "c");
+///     bmap.insert(2, "b");
+///     bmap.insert(1, "a");
+///     bmap.insert(5, "e");
+///     bmap.insert(4, "d");
+///
+///      // 输出结果为：{1: "a", 2: "b", 3: "c", 5: "e", 4: "d"}，但key的顺序是随机的，因为HashMap是无序的
+///     println!("{:?}", hmap);
+///     // 输出结果永远都是 {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}，因为BTreeMap是有序的
+///     println!("{:?}", bmap);
+/// }
+/// map_demo();
+/// ```
+pub fn map_demo() {
+    use std::collections::BTreeMap;
+    use std::collections::HashMap;
+
+    let mut hmap = HashMap::new();
+    let mut bmap = BTreeMap::new();
+
+    hmap.insert(3, "c");
+    hmap.insert(1, "a");
+    hmap.insert(2, "b");
+    hmap.insert(5, "e");
+    hmap.insert(4, "d");
+
+    bmap.insert(3, "c");
+    bmap.insert(2, "b");
+    bmap.insert(1, "a");
+    bmap.insert(5, "e");
+    bmap.insert(4, "d");
+    // 输出结果为：{1: "a", 2: "b", 3: "c", 5: "e", 4: "d"}，但key的顺序是随机的，因为HashMap是无序的
+    println!("{:?}", hmap);
+    // 输出结果永远都是 {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}，因为BTreeMap是有序的
+    println!("{:?}", bmap);
+}
