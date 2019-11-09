@@ -188,3 +188,106 @@ pub fn map_demo() {
     // 输出结果永远都是 {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}，因为BTreeMap是有序的
     println!("{:?}", bmap);
 }
+
+/// # 集合: HashSet和BTreeSet
+///
+/// Basic usage:
+///
+/// ```
+/// use std::collections::HashSet;
+/// use std::collections::BTreeSet;
+/// fn hashset_btreeset() {
+///     let mut hbooks = HashSet::new();
+///     let mut bbooks = BTreeSet::new();
+///
+///     // 插入数据
+///     hbooks.insert("A Song of Ice and Fire");
+///     hbooks.insert("The Emerald City");
+///     hbooks.insert("The Odyssey");
+///
+///     // 判断元素是否存在，contains方法和HashMap中的一样
+///     if !hbooks.contains("The Emerald City") {
+///         println!("We have {} books, but The Emerald City ain't one.",
+///                  hbooks.len());
+///     }
+///     // 顺序是随机 {"The Emerald City", "The Odyssey", "A Song of Ice and Fire"}
+///     println!("{:?}", hbooks);
+///
+///     bbooks.insert("A Song of Ice and Fire");
+///     bbooks.insert("The Emerald City");
+///     bbooks.insert("The Odyssey");
+///     // 顺序永远是  {"A Song of Ice and Fire", "The Emerald City", "The Odyssey"}
+///     println!("{:?}", bbooks);
+/// }
+/// hashset_btreeset();
+/// ```
+pub fn hashset_btreeset(){
+    use std::collections::BTreeSet;
+    use std::collections::HashSet;
+
+    let mut hbooks = HashSet::new();
+    let mut bbooks = BTreeSet::new();
+
+    hbooks.insert("A Song of Ice and Fire");
+    hbooks.insert("The Emerald City");
+    hbooks.insert("The Odyssey");
+    // 判断元素是否存在，contains方法和HashMap中的一样
+    if !hbooks.contains("The Emerald City") {
+        println!(
+            "We have {} books, but The Emerald City ain't one.",
+            hbooks.len()
+        );
+    }
+
+    println!("{:?}", hbooks);
+    bbooks.insert("A Song of Ice and Fire");
+    bbooks.insert("The Emerald City");
+    bbooks.insert("The Odyssey");
+    println!("{:?}",bbooks);
+}
+
+/// # 优先队列：BinaryHeap
+///
+/// Basic usage:
+///
+/// ```
+/// use std::collections::BinaryHeap;
+/// fn binary_heap() {
+///     let mut heap = BinaryHeap::new();
+///     assert_eq!(heap.peek(), None);
+///     heap.push(93);
+///     heap.push(80);
+///     heap.push(48);
+///     heap.push(53);
+///     heap.push(72);
+///     heap.push(30);
+///     heap.push(18);
+///     heap.push(36);
+///     heap.push(15);
+///     heap.push(35);
+///     heap.push(45);
+///     assert_eq!(heap.peek(), Some(&93));
+///     println!("{:?}", heap);  // [93, 80, 48, 53, 72, 30, 18, 36, 15, 35, 45]
+/// }
+/// binary_heap();
+/// ```
+pub fn binary_heap(){
+    use std::collections::BinaryHeap;
+    let mut heap = BinaryHeap::new();
+
+    assert_eq!(heap.peek(),None);
+    heap.push(93);
+    heap.push(80);
+    heap.push(48);
+    heap.push(53);
+    heap.push(72);
+    heap.push(30);
+    heap.push(18);
+    heap.push(36);
+    heap.push(15);
+    heap.push(35);
+    heap.push(45);
+
+    assert_eq!(heap.peek(), Some(&93));
+    println!("{:?}", heap);
+}
