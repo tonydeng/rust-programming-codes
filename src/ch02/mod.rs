@@ -18,3 +18,4 @@ pub fn title(){
 pub mod binding;
 pub mod function;
 pub mod control_flow;
+pub mod collections;
